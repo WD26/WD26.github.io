@@ -1,159 +1,157 @@
-# Simple Texture Jekyll Theme
+# Jekflix Template
+![Cover Image](http://res.cloudinary.com/dm7h7e8xj/image/upload/v1505354182/jekflix-logo_mfngps.png)
 
-![Gem Version](https://img.shields.io/gem/v/jekyll-theme-simple-texture.svg)
+See the [demo here](https://www.rossener.com/jekflix-template).
 
-Simple Texture is a gem-based responsive simple texture styled Jekyll theme for [Jekyll][Jekyll] 3.3 or above,
-which can also be forked as a boilerplate for older versions of Jekyll.
+## What is it?
 
-## Demo
+A template for Jekyll inspired by Netflix panel for who loves movies and series and would like to have a blog with this cool appearance ;)
 
-- Starter-kit demo:
-<https://yizeng.github.io/jekyll-theme-simple-texture/>
-- My own personal blog: <http://yizeng.me/blog>
+![Screenshot](http://res.cloudinary.com/dm7h7e8xj/image/upload/v1505357238/jekflix-screenshot_qikqkl.jpg)
 
-![Screenshot - Home](assets/images/screenshots/home.png)
+## Features
 
-![Screenshot - Blog](assets/images/screenshots/post.png)
+- Gulp
+- Stylus
+- Live Search
+- Minutes to Read
+- Reading Progress Bar
+ 
+ ![Progress Bar](http://res.cloudinary.com/dm7h7e8xj/image/upload/v1505357769/jekflix-progress-bar_he7gqf.jpg)
+- "New Post" tag
+- Load images on demand
+- Emojis 😎
+- Push Menu
+- SVG icons
+- Shell Script to create drafts and posts
+- Tags page
+- About page
+- Contact page
+- Feed RSS
+- Sitemap.xml
+- Info Customization
+- Disqus
+- Google Analytics
 
-## Installation
+## Setup
 
-### As a Jekyll theme gem (Jekyll >= 3.3)
+1. Install Jekyll (use the command `sudo gem install jekyll`)
+1. Fork the [Jekflix Template](https://github.com/thiagorossener/jekflix-template/fork)
+1. Clone the repo you just forked
+1. Edit `_config.yml` to personalize your site
+1. Check out the sample posts in `_posts` to see examples for assigning category, tags, image and other YAML data
+1. Read the documentation below for further customization pointers and documentation
+1. Remember to compile your assets files with Gulp
 
-If you are creating a new website or blog,
-please follow the commands below first:
 
-1. Install Jekyll and [Bunlder][Bunlder]
+## Settings
 
-       gem install jekyll bundler
+You have to fill some informations on `_config.yml` to customize your site.
 
-2. Create a new Jekyll app
+```
+# Site Settings
+title: Thiago Rossener | Front-end Developer
+email: youremail@xyz.com
+description: Some text about your blog.
+baseurl: "" # the subpath of your site, e.g. /blog/ or empty.
+url: "https://www.rossener.com" # the base hostname & protocol for your site
+google_analytics: "UA-XXXXXXXX-X"
 
-       jekyll new jekyllapp
+# User settings
+username: Thiago Rossener # it will appear on each page title after '|'
+user_description: Some text about you.
+disqus_username: disqus_username
 
-3. Enter the new directory
+# Social Media settings
+# Remove the item if you don't need it
+github_username: github_username
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: linkedin_username
+medium_username: medium_username
+```
 
-       cd jekyllapp
+## Color customization
 
-4. Then follow the instructions below like existing Jekyll app.
+All color variables are in [src/styl/_variables.styl](src/styl/_variables.styl).
 
-Then for existing Jekyll apps,
+Default colors:
 
-1. Install Bundler if haven't done so.
+![#ff0a16](https://placehold.it/15/ff0a16/000000?text=+) `#FF0A16` Theme Color
 
-       gem install bundler
+![#141414](https://placehold.it/15/141414/000000?text=+) `#141414` Primary Dark
 
-1. Remove Jekyll auto-generated default pages `404.html`, `about.md` and `index.md` or any your custom layouts or existing theme files.
+![#ffffff](https://placehold.it/15/ffffff/000000?text=+) `#FFFFFF` Accent Dark
 
-1. Remove the existing `Gemfile.lock`.
+![#f2f2f2](https://placehold.it/15/f2f2f2/000000?text=+) `#F2F2F2` Light Gray
 
-1. Download the respository [here](https://github.com/yizeng/jekyll-theme-simple-texture/archive/master.zip)
-and locate `starter-kit` folder,
-or download `starter-kit` folder directly [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/yizeng/jekyll-theme-simple-texture/tree/master/starter-kit).
+![#333333](https://placehold.it/15/333333/000000?text=+) `#333333` Texts
 
-1. Put everything in the `starter-kit` in the root directory,
-i.e. `jekyllapp` in this example.
+## Creating drafts
 
-1. Run `bundle install` to install dependencies.
+You can use the `initdraft.sh` to create your new drafts. Just follow the command:
 
-1. Run Jekyll with `bundle exec jekyll serve`
+```
+./initdraft.sh -c Post Title
+```
 
-1. Hack away at <http://localhost:4000>!
+The new file will be created at `_drafts` with this format `date-title.md`.
 
-### As a fork
+## Creating posts
 
-1. Fork the repo [here](https://github.com/yizeng/jekyll-theme-simple-texture#fork-destination-box)
+You can use the `initpost.sh` to create your new posts. Just follow the command:
 
-2. Clone the repo just forked.
+```
+./initpost.sh -c Post Title
+```
 
-       git clone git@github.com:[YOUR_USERNAME]/jekyll-theme-simple-texture.git
+The new file will be created at `_posts` with this format `date-title.md`.
 
-3. Delete `starter-kit` folder and `jekyll-theme-simple-texture.gemspec` file (they're for people installing via gem)
+## Front-matter 
 
-4. Install Bundler if haven't done so.
+When you create a new post, you need to fill the post information in the front-matter, follow this example:
 
-       gem install bundler
+```
+---
+layout: post
+title: "Welcome"
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+image: 'http://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_760/v1504807239/morpheus_xdzgg1.jpg'
+category: 'blog'
+tags:
+- blog
+- jekyll
+twitter_text: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+introduction: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+---
+```
 
-5. Update the `Gemfile` to look like the following:
+**Your image size should have the proportion of a 600x315 image to look good on home page.**
 
-   ```ruby
-   source "https://rubygems.org"
+## Run locally
 
-   gem 'jekyll', '= 3.7.2' # locked in to be consistent GitHub Pages.
+In order to compile the assets and run Jekyll on local you need to follow those steps:
 
-   group :jekyll_plugins do
-     gem 'jekyll-feed'
-     gem 'jekyll-redirect-from'
-     gem 'jekyll-seo-tag'
-     gem 'jekyll-sitemap'
-   end
-   ```
+- Install [NodeJS](https://nodejs.org/) (remember to use the latest version)
+- Run `sudo npm install`
+- Run `sudo npm install -g gulp gulp-cli`
+- Run `sudo gulp`
 
-6. Run `bundle install` to install dependencies.
+## Questions?
 
-7. Run Jekyll with `bundle exec jekyll serve`
+Ping me on Twitter [@thiagorossener](https://twitter.com/thiagorossener) or file a [GitHub Issue](https://github.com/thiagorossener/jekflix-template/issues/new).
 
-8. Hack away at <http://localhost:4000>!
+## Donation
 
-## Contributing
+Did you like my work? Buy me a beer :)
 
-Bug reports and pull requests are welcome on GitHub at <https://github.com/yizeng/jekyll-theme-simple-texture>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YT3BC53XLMJ96&lc=GB&item_name=Thiago%20Rossener%20Nogueira&item_number=DON1212&no_note=0&cn=Adicionar%20instru%c3%a7%c3%b5es%20especiais%20para%20o%20vendedor%3a&no_shipping=2&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
-## Credits
+## Author
 
-- [Jekyll][Jekyll]
-  + [jekyll-feed](https://github.com/jekyll/jekyll-feed)
-  + [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from)
-  + [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
-  + [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
-  + [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
-  + [Jekyll-Bootstrap](http://jekyllbootstrap.com/)
-  + [theme-the-program](https://github.com/jekyllbootstrap/theme-the-program)
-
-- [Sass](http://sass-lang.com/)
-  + [Normalize.css](https://necolas.github.io/normalize.css/)
-  + [Animate.css](https://daneden.github.io/animate.css/)
-  + [Simple Icons](https://simpleicons.org/)
-  + [Noise Texture Generator](http://www.noisetexturegenerator.com/)
-- JavaScript
-  + [cdnjs](https://cdnjs.com/)
-  + [jQuery](https://jquery.com/)
-  + [fullPage.js](https://alvarotrigo.com/fullPage/)
-  + [pace.js](http://github.hubspot.com/pace/docs/welcome/)
-  + [Modernizr](https://modernizr.com/)
-  + [FancyBox](http://fancybox.net/)
-  + [unveil.js](http://luis-almeida.github.io/unveil/)
-- Fonts
-  + [Font Squirrel](https://www.fontsquirrel.com/)
-  + [Bitter](https://fonts.google.com/specimen/Bitter)
-  + [Junge](https://fonts.google.com/specimen/Junge)
-  + [Ubuntu Condensed](https://fonts.google.com/specimen/Ubuntu+Condensed)
+[Thiago Rossener](https://www.rossener.com/) based on [Cards Jekyll Template](https://github.com/willianjusten/cards-jekyll-template).
 
 ## License
 
-The theme is available as open source under the terms of the
-[MIT License](https://github.com/yizeng/jekyll-theme-simple-texture/blob/master/LICENSE).
-
-    MIT License
-
-    Copyright (c) 2017 Yi Zeng
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-
-[Jekyll]: http://jekyllrb.com/
-[Bunlder]: http://bundler.io/
+*Jekflix Template* is available under the MIT license. See the LICENSE file for more info.
