@@ -3,7 +3,7 @@ disqus:
   comments: true
   disqus_shortname: 'WD26'
 
-google-ID: 'ryunhoo123'
+google-ID: 'UA-113251536-1'
 
 menu:
 - {name: 'Category', folder: 'pages', file: 'category.html'}
