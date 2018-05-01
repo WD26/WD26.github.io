@@ -79,6 +79,16 @@ adder(2, 6);
 // > 8
 {% endhighlight %}
 
+
+```
+#include <iostream>
+using namespace std;
+
+int main(){
+  cout<<"hello"<<endl;
+}
+```
+
 Another option is to embed your code through [Gist](https://en.support.wordpress.com/gist/).
 
 ## Unordered and Numbered Lists
