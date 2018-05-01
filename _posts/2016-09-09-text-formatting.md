@@ -80,7 +80,7 @@ adder(2, 6);
 {% endhighlight %}
 
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 
