@@ -3,7 +3,7 @@ layout: post
 title: "JavaScript"
 author: "WD26"
 categories: category
-tags: [category]
+tags: [자바스크립트,JS,JavaScript]
 image: JS.jpg
 ---
 
