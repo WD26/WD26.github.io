@@ -1,9 +1,9 @@
 # Change to true for Disqus comments
 disqus:
-  comments: false
-  disqus_shortname: 'millennial-3'
+  comments: true
+  disqus_shortname: 'WD26'
 
-google-ID: 'UA-112060364-2'
+google-ID: 'ryunhoo123'
 
 menu:
 - {name: 'Interesting Facts', folder: 'pages', file: 'facts.html'}
