@@ -1,100 +1,55 @@
-# Material Theme for Jekyll!
-## DEMO: [code.liquidthink.net](http://www.code.liquidthink.net)
-#### created with React, Redux, React-Router and transpiled with Webpack.
-![travis-ci](https://api.travis-ci.org/InsidiousMind/material-bliss-jekyll-theme.svg?branch=master)
+# jekyll-theme-EasyBook
 
-Made with React and served statically and dynamically
+Another Jekyll Blog Theme "EasyBook"
 
-### **in order to build:**
-#### for Production
+Start blogging with a simple but powerful theme.
+
+## Features
+
+- Everything Basic Jekyll has.
+- **Pagination** is enabled.
+- **Comments** using Disqus or 多说.
+- **TOC** makes reading easier.
+- **Profile** including your links and avatar on the sidebar.
+- *And more...*
+
+## Install
+
+Read [Quick Guide] to learn how to install and publish.
+
+Read [Welcome to Jekyll and EasyBook][helloPost] and [Jekyll][jekyll] for further information.
+
+**If need help, please:**
+
+ - [**Read Wiki pages**](https://github.com/laobubu/jekyll-theme-EasyBook/wiki)
+ - **Google it**
+ - [**Submit an issue**](https://github.com/laobubu/jekyll-theme-EasyBook/issues/new)
+
+## Donate
+
+Buy me a coffee if you find EasyBook useful for you :smiley:
+
+Visit <http://laobubu.net/donate.html>
+
+## Demo
+
+[laobubu's blog](http://blog.laobubu.net) | [empty site](http://laobubu.github.io/jekyll-theme-EasyBook)
+
+![Homepage](https://ooo.0o0.ooo/2016/02/11/56bc997c65daf.png)
+
+## License
+
 ```
-./build-prod.sh //for production build
+The MIT License (MIT)
+Copyright (c) 2016 laobubu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-#### for Development:
-run both build-dev and npm run jekyll in different terminals
-```
-npm run jekyll // in one terminal
-./build-dev.sh //in another
-```
-### Features:
-- Two Themes: Light and Dark
-- Fully Responsive for most devices
-- Dynamic Fuzzy Search
-- Push-out Menu to save space and create focus for users
-- Dynamic Project Page in a masonry layout built
-- The pros of dynamic webpages matched with the awesomeness of static Jekyll
-- Optimized (99/100 on testmysite by google) with Jekyll Assets and Webpack
-- included RESTful-like API (with [jekyll-react plugin](https://github.com/InsidiousMind/Jekyll-React))
-- Static or Dynamic Pages with just a frontmatter option
-- MORE TO COME
-
-### Screen Shots
-
-Dark Theme
-![Dark Theme](http://i.imgur.com/GfFoLXS.png)
-
-Light Theme
-![Light Theme](http://i.imgur.com/cdIgtax.png)
-
-Dark Theme with Push out menu active
-![Dark Theme Push Out](http://i.imgur.com/xsjkszO.png)
-
-Project Page
-![Project Page](http://i.imgur.com/VnLqCpi.png)
-
-Single Post
-![Post](http://i.imgur.com/AcZ8nNi.png)
-
-
-## Site Layout
-
-`./react-dev/pages`
-- These are static Jekyll components being rendered with react
-
-`./react-dev/helpers.js`
-- these are global helpers. Right now all that is included are the static routes of you're site. Put all your static routes there (in 'staticRoutes' array), you don't need the full route just the base after your url So for example, if my posts are static and are at
- `http://www.example.com/posts/this-is-a-post.html`
- you just need "/posts/"
- this makes the loading of some parts of the site seem almost 'instant', while preserving the SEO of your site since Google can crawl the static content
-
-`./react-dev/components/menu_items.js`
-
-- This is where your menu items are rendered. If you want a new item, add an object to the Hashlist with it's corresponding path (from your root url) Javascript object. IE if it is:
-
-`const menuItems = { Home: '/', About: '/about/', Projects: '/projects/' };`
-and you want another entry, "Coding", with a path '/coding/' from the root url the object should look something like this :
-`const menuItems = { Home: '/', About: '/about/', Projects: '/projects/', Coding: '/coding'};`
-
-
-`./react-dev/actions/index.js`
-- this is where the magic happens from the JSON our Jekyll plugins rendered ( Jekyll_pages_api and Jekyll-react)
-You're going to want to add your site url to the `ROOT_URL` variable
-EX:
-if your site is at `http://www.example.com` change
-`const ROOT_URL = 'http://test_domain.com:4000';`
-to
-`const ROOT_URL = 'http://example.com';`
-
-
-### Site Config Variables:
-any site configuration that you want to let React use, put under 'react' in your `_config.yml`. This will be grabbed by the siteInfo action creator and put through it's corresponding reducer
-
-### TODO:
- - [x] create a jekyll plugin to output all [YML config] site data into JSON, in such a way which is importable to react and can be used to manage state
- - [x] [possible TODO, maybe redundant. ?] Rendered JS to HTML and outputted into a folder for Jekyll to take it. This allows us to use React components on `_layouts`
- - [x] create a Dynamic Search Function with Auto Fill
- - [x] Finish implementing Toggle Theme Switch
- - [ ] add useful important information to single-post post meta
- - [ ] make footer look better on mobile
- - [ ] Implement 'sliding' on mobile-touchA
- - [ ] make expanded search bar more responsive on mobile
- - [ ] create category pages
- - [ ] add pagination
- - [ ] Make different post 'types' (IE Fullsize page)
- - [ ] make it easier to use with Jekyll
- - [ ] Save theme in sites cookies
-
-
-### Contribution
-Want to contribute? Found an issue? Jump right in! I welcome any help I can get, and will work with you to fix any issues.
+[Quick Guide]: https://github.com/laobubu/jekyll-theme-EasyBook/wiki/Quick-Guide
+[helloPost]: http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello
+[jekyll]: http://jekyllrb.com/
