@@ -1,13 +1,26 @@
-<div class="header-placeholder"></div>
-<header class="header">
-  <div class="wrapper">
-    <div id="sidebar-toggle">TOC</div>
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <nav class="site-nav">
-      {% for link in site.header.links %}{% assign url = link[1] %}
-        {% assign urlchk = url | split: "/" %}{% if urlchk[0] == '' and urlchk[1] != '' %}{% assign uprefix = site.baseurl %}{% else %}{% assign uprefix = ''%}{% endif %}
-        <a class="page-link" href="{{ url | prepend: uprefix }}">{{ link[0] }}</a>
+<header class="site-header">
+  <h3 class="site-title">
+    <a href="{{ site.github.url }}/">{{ site.title }}</a>
+  </h3>
+  <nav class="menu-list">
+    {% for item in site.data.settings.menu %}
+      <a href="{{ site.github.url }}/{{ item.folder }}/{{ item.file }}" class="menu-link">{{ item.name }}</a>
+    {% endfor %}
+
+    {% for item in site.data.settings.social %}
+      <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
+    {% endfor %}
+  </nav>
+  <div class="dropdown">
+    <button class="dropbtn"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <div class="dropdown-content">
+      {% for item in site.data.settings.menu %}
+        <a href="{{ site.github.url }}/pages/{{ item.file }}" class="menu-link">{{ item.name }}</a>
       {% endfor %}
-    </nav>
+
+      {% for item in site.data.settings.social %}
+        <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
+      {% endfor %}
+    </div>
   </div>
 </header>

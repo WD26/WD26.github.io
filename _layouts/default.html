@@ -1,25 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
 
-    {% include header.html %}
+<div class="container">
+  {% include header.html %}
+  <div class="posts-wrapper">
+    {{ content }}
+  </div>
+  {% include footer.html %}
+</div>
 
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="col-main">
-          {{ content }}
-        </div>
-        <div class="col-second">
-          {% include sidebar.html %}
-        </div>
-      </div>
-    </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113251536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    {% include footer.html %}
+  gtag('config', 'UA-113251536-1');
+</script>
 
-  </body>
 
+</body>
 </html>
