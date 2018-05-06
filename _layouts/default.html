@@ -1,28 +1,9 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 {% include head.html %}
-
 <body>
-
-<div class="container">
-  {% include header.html %}
-  <div class="posts-wrapper">
-    {{ content }}
-  </div>
-  {% include footer.html %}
-</div>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113251536-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-113251536-1');
-</script>
-
-
+  {{ content }}
+  {% include javascripts.html %}
+  {% include analytics.html %}
 </body>
 </html>

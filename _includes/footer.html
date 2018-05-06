@@ -1,6 +1,5 @@
-<footer class="footer">
-  {% for item in site.data.settings.social %}
-    <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
-  {% endfor %}
-  <div class="post-date"><a href="{{ site.github.url }}/">{{ site.title }} | {{ site.description }} by {{ site.author }}</a></div>
-</footer>
+<footer class="main-footer">
+  <div class="copyright">
+    <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
+  </div>
+</footer> <!-- End Footer -->
